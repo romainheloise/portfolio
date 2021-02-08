@@ -5,7 +5,7 @@ const useIntersectionObs = (refCard) => {
 
   useEffect(() => {
 
-    if (refCard.current) {
+    if (refCard) {
 
       const options = {
         root: null,

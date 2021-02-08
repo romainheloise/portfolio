@@ -1,8 +1,15 @@
 const Stackitems = ({ type }) => {
   return (
     <div className="about-stack">
-      {type.map((x) => {
-        return <p className="stack-items">{x.name}</p>;
+      {type.map((x, index) => {
+        return (
+          <div className="about-stack-text">
+            <p className="stack-items" key={index}>
+              {x.name}
+            </p>
+            <p>{x.icone}</p>
+          </div>
+        );
       })}
     </div>
   );

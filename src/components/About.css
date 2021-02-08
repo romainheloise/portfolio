@@ -27,6 +27,7 @@
   margin-left: 30px;
   width: 300px;
   z-index: 1;
+  height: fit-content;
 }
 .portrait img {
   width: 300px;
@@ -89,7 +90,9 @@
 
 .stacklist {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 .stack-column {
   margin-right: 20px;
@@ -97,9 +100,16 @@
 }
 
 .about-stack {
-  display: flex;
-  flex-direction: column;
+  display: flex; 
   flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.about-stack-text {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-right: 20px;
 }
 
 .stack-items {

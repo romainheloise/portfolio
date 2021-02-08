@@ -1,27 +1,31 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState, forwardRef } from "react";
 import "./About.css";
 import useIntersectionObs from "../customhooks/useIntersectionObs";
 import { CSSTransition } from "react-transition-group";
 import Stackitems from "./Stackitems";
 import portrait from "./70567235.jpeg";
+import { IoLogoJavascript } from "react-icons/io";
+import { FaReact, FaNodeJs } from "react-icons/fa";
+import { SiRedux, SiMysql, SiFigma } from "react-icons/si";
+import { DiPhotoshop, DiIllustrator } from "react-icons/di";
+import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 
 const stackDev = [
-  { name: "Js" },
-  { name: "React" },
-  { name: "Redux" },
-  { name: "NodeJs" },
-  { name: "MYSQL" },
+  { name: "Js", icone: <IoLogoJavascript size={30} /> },
+  { name: "React", icone: <FaReact size={30} /> },
+  { name: "Redux", icone: <SiRedux size={30} /> },
+  { name: "NodeJs", icone: <FaNodeJs size={30} /> },
+  { name: "MYSQL", icone: <SiMysql size={30} /> },
 ];
 
 const stackGfx = [
-  { name: "Adobe Photoshop" },
-  { name: "Adobe Illlustrator" },
-  { name: "Figma" },
+  { name: "Adobe Photoshop", icone: <DiPhotoshop size={30} /> },
+  { name: "Adobe Illlustrator", icone: <DiIllustrator size={30} /> },
+  { name: "Figma", icone: <SiFigma size={30} /> },
 ];
 
-const About = () => {
-  const sceneRef = useRef();
-  const ratio = useIntersectionObs(sceneRef);
+const About = (props, ref) => {
+  const ratio = useIntersectionObs(ref);
   const [stackAnim, setStackAnim] = useState(false);
   const [opacity, setOpacity] = useState(0);
   const [portaitPop, setPortraitPop] = useState(false);
@@ -47,7 +51,7 @@ const About = () => {
   }, [ratio]);
 
   return (
-    <div id="about-all" ref={sceneRef}>
+    <div id="about-all" ref={ref}>
       <div className="about-info">
         <p
           className="code-like"
@@ -82,22 +86,31 @@ const About = () => {
           {"</h2>"}
         </p>
         <div className="about-text">
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero
-            perspiciatis a, porro minus suscipit dolorum distinctio ipsa sint
-            modi ducimus architecto nihil quis maiores iusto error. Inventore
-            suscipit nisi illum. Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. Libero perspiciatis a, porro minus suscipit
-            dolorum distinctio ipsa sint modi ducimus architecto nihil quis
-            maiores iusto error. Inventore suscipit nisi illum. Lorem ipsum
-            dolor, sit amet consectetur adipisicing elit. Libero perspiciatis a,
-            porro minus suscipit dolorum distinctio ipsa sint modi ducimus
-            architecto nihil quis maiores iusto error. Inventore suscipit nisi
-            illum. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Libero perspiciatis a, porro minus suscipit dolorum distinctio ipsa
-            sint modi ducimus architecto nihil quis maiores iusto error.
-            Inventore suscipit nisi illum.
-          </p>
+          <div className="">
+            <h4>BLABLABLABLABLABLA</h4>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero
+              perspiciatis a, porro minus suscipit dolorum distinctio ipsa sint
+              modi ducimus architecto nihil quis maiores iusto error. Inventore
+              suscipit nisi illum. Lorem ipsum dolor, sit amet consectetur
+              adipisicing elit. Libero perspiciatis a, porro minus suscipit
+              dolorum distinctio ipsa sint modi ducimus architecto nihil quis
+              maiores iusto error. Inventore suscipit nisi illum. Lorem ipsum
+              dolor, sit amet consectetur adipisicing elit. Libero perspiciatis
+              a, porro minus suscipit dolorum distinctio ipsa sint modi ducimus
+              architecto nihil quis maiores iusto error. Inventore suscipit nisi
+              illum. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Libero perspiciatis a, porro minus suscipit dolorum distinctio
+              ipsa sint modi ducimus architecto nihil quis maiores iusto error.
+              Inventore suscipit nisi illum.
+            </p>
+            <a>
+              <AiFillLinkedin size={30} />
+            </a>
+            <a>
+              <AiFillGithub size={30} />
+            </a>
+          </div>
           <div
             className="portrait"
             style={{
@@ -171,4 +184,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default forwardRef(About);

@@ -1,0 +1,124 @@
+.contact-ball {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: greenyellow;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-size: small;
+  font-weight: 800;
+}
+
+form {
+  position: absolute;
+  top: 100px;
+  left: 10px;
+  background-color: greenyellow;
+  height: 300px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-inputs {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.contact-inputs input[type="text"] {
+  border: none;
+  margin: 5px 0 5px 0;
+  padding: 5px;
+  outline: none;
+  transition: 0.3s;
+  font-family: "Montserrat", sans-serif;
+}
+
+
+
+
+.contact-inputs textarea {
+  border: none;
+  margin: 5px 0 5px 0;
+  height: 100px;
+  resize: none;
+  outline: none;
+  transition: 0.3s;
+  padding: 5px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.contact-inputs input[type="submit"] {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  margin-top: 10px;
+  transform: rotate(-2deg);
+  cursor: pointer;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  box-shadow: 0 0 5px white;
+  border: 1px solid white;
+}
+
+input[type="text"]::placeholder,
+textarea::placeholder {
+  font-family: "Montserrat", sans-serif;
+}
+
+.contact-ball span {
+  transform: rotate(-5deg);
+  animation: infinite shake 1s;
+}
+
+@keyframes formon {
+  0% {
+    border-radius: 100%;
+
+    transform: scale(0.1, 0.1);
+  }
+  100% {
+    border-radius: 0;
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes formoff {
+  0% {
+    border-radius: 0;
+    transform: scale(1, 1);
+  }
+  100% {
+    border-radius: 100%;
+
+    transform: scale(0.1, 0.1);
+  }
+}
+
+
+@keyframes shake {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}

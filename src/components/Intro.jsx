@@ -1,10 +1,10 @@
 import "./Intro.css";
 import useIntersectionObs from "../customhooks/useIntersectionObs";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState, forwardRef } from "react";
+import Contact from "./Contact";
 
-const Intro = () => {
-  const testRef = useRef();
-  const ratio = useIntersectionObs(testRef);
+const Intro = (props, ref) => {
+  const ratio = useIntersectionObs(ref);
   const [opacity, setOpacity] = useState(0);
   const [translate, setTranslate] = useState(0);
   const [backgroundOk, setBackgroundOk] = useState(false);
@@ -22,7 +22,9 @@ const Intro = () => {
   }, [ratio]);
 
   return (
-    <div id="intro-all" ref={testRef}>
+    <div id="intro-all" ref={ref}>
+      <Contact />
+
       <h1
         style={{
           transform: `translateX(${(1 - ratio) * -800}px )  rotate(-2deg)`,
@@ -30,7 +32,7 @@ const Intro = () => {
           opacity: `${opacity}`,
         }}
       >
-        Hello I'am
+        Hello I'm
       </h1>
       <div
         className="intro-blaze"
@@ -63,4 +65,4 @@ const Intro = () => {
   );
 };
 
-export default Intro;
+export default forwardRef(Intro);

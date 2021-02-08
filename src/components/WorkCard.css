@@ -1,0 +1,136 @@
+.work-card-cont {
+  height: 500px;
+  width: 600px;
+  margin-right: 20px;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  overflow: hidden;
+}
+
+.work-card-cont h2 {
+  margin-left: -10px;
+}
+.work-card-cont .title-underline {
+  position: relative;
+  background-color: white;
+}
+.work-card-cont .title-underline::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: -5px;
+  left: -20px;
+  background-color: greenyellow;
+  transform: rotate(-3deg);
+  z-index: -1;
+}
+
+.work-images {
+  width: 200%;
+  height: 200%;
+  transform: skewX(5deg);
+}
+
+.work-titre {
+  margin-left: 54px;
+}
+
+.viewmore {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background-color: greenyellow;
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+  top: 50%;
+  left: 50%;
+}
+
+.viewmore:hover {
+  background-color: white;
+}
+
+.viewmore-info-container {
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.viewmore-info-content {
+  transform: skewX(5deg);
+  width: 90%;
+  height: 100%;
+}
+
+.viewmore-info-content p {
+  font-size: small;
+}
+
+.viewmore-info-content button {
+  background-color: unset;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.viewmore-info-content button:hover {
+  color: greenyellow;
+}
+
+.viewmore-info-top {
+  margin-top: 50px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.view-more-link {
+  margin-top: 10px;
+}
+
+.view-more-link a {
+  margin-right: 10px;
+  transition: 0.2s;
+}
+
+.view-more-link a:hover {
+  color: greenyellow;
+}
+
+.react-multi-carousel-dot--active button {
+  background-color: greenyellow !important;
+}
+
+.react-multi-carousel-dot button {
+  border-color: unset !important;
+}
+
+@keyframes glowup {
+  0% {
+    transform: scale(0, 0);
+    border-radius: 100%;
+  }
+
+  100% {
+    transform: scale(1, 1);
+    border-radius: 0;
+  }
+}
+
+@keyframes glowdown {
+  0% {
+    transform: scale(1, 1);
+    border-radius: 0;
+  }
+  100% {
+    transform: scale(0, 0);
+    border-radius: 100%;
+  }
+}
